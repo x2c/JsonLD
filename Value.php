@@ -9,7 +9,7 @@
 
 namespace ML\JsonLD;
 
-use stdClass as Object;
+use stdClass;
 
 /**
  * Value is the abstract base class used for typed values and

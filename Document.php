@@ -9,7 +9,7 @@
 
 namespace ML\JsonLD;
 
-use stdClass as Object;
+use stdClass;
 use ML\IRI\IRI;
 
 /**
@@ -191,14 +191,14 @@ class Document implements DocumentInterface, JsonLdSerializable
         }
 
         foreach ($this->namedGraphs as $graphName => $graph) {
-            $namedGraph = new Object();
+            $namedGraph = new stdClass();
             $namedGraph->{'@id'} = $graphName;
             $namedGraph->{'@graph'} = $graph->toJsonLd($useNativeTypes);
 
             $defGraph[] = $namedGraph;
         }
 
-        $document = new Object();
+        $document = new stdClass();
         $document->{'@graph'} = $defGraph;
 
         return array($document);
